@@ -13,7 +13,7 @@ const RegistrationImageSrc = '../../../assets/images/registration.png'
 import CustomButton from '../../components/CustomButton'
 import CustomInput from '../../components/CustomInput'
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }) => {
     const [ date, setDate ] = useState(new Date())
     const [ open, setOpen ] = useState(false)
     const [ birthLabel, setBirthLabel ] = useState('Data de nascimento')
@@ -203,7 +203,7 @@ const RegisterScreen = () => {
 
                 <CustomButton 
                     label={'Registrar'}
-                    onPress={() => {}}
+                    onPress={() => navigation.navigate('Home')}
                 />
 
                 <View
@@ -215,7 +215,7 @@ const RegisterScreen = () => {
                     }}
                 >
                     <Text>Já possui cadastro? </Text>
-                    <TouchableOpacity onPress={() => {}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                         <Text
                             style = {{
                                 color: '#000', 
